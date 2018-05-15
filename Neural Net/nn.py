@@ -11,7 +11,7 @@ class NeuralNetwork():
         return 1/(1 + exp(-x))
 
     def __sigmoid_derivative(self, x):
-        return x * (1-x)
+        return x * (1 - x)
 
     def train(self, training_set_inputs, training_set_outputs, num_training_iteration):
         for iteration in range(num_training_iteration):
@@ -27,7 +27,7 @@ class NeuralNetwork():
             self.synaptic_weights += adjustment
 
     def predict(self, inputs):
-        return self.__sigmoid(dot(input, self.synaptic_weights))
+        return self.__sigmoid(dot(inputs, self.synaptic_weights))
 
 
 if __name__ == '__main__':
